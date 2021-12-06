@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  get 'todolist/new'
+  get 'todolists/new'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get 'top' => 'homes#top'
-  post 'todolist' => 'todolist#create'
-  get 'todolist' => 'todolist#index'
+  post 'todolists' => 'todolists#create'
+  get 'todolists' => 'todolists#index'
 
 end
