@@ -10,8 +10,8 @@ class TodolistsController < ApplicationController
     list = List.new(list_params)
     # ２. データをデータベースに保存するためのsaveメソッド実行
     list.save
-    # ３. トップ画面へリダイレクト
-    redirect_to '/top'
+    # ３. トップ画面へリダイレクト→詳細画面へリダイレクトに上書き
+    redirect_to todolist_path(list.id)
   end
 
   def index
