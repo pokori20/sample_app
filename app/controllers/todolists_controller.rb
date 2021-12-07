@@ -12,7 +12,7 @@ class TodolistsController < ApplicationController
     if @list.save
     # ３. トップ画面へリダイレクト→詳細画面へリダイレクトに上書き
     redirect_to todolist_path(@list.id)
-    else 
+    else
       render :new
     end
   end
@@ -33,12 +33,12 @@ class TodolistsController < ApplicationController
     list = List.find(params[:id])
     list.update(list_params)
     redirect_to todolist_path(list.id)
-  end  
+  end
 
   private
   # ストロングパラメータ カラムの種類がtitle~image
   def list_params
     params.require(:list).permit(:title, :body, :image)
-    
+
   end
 end
